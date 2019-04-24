@@ -61,10 +61,10 @@ const MainForm = () => {
           }
         </select>
         <input type="text" placeholder="Input" onChange={handleInput} />
-        <p className="result">
+        <div className="result">
           <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
           {result}
-        </p>
+        </div>
         <Button
           type="submit"
           // to=""

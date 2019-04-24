@@ -1,0 +1,27 @@
+.submit-job-form {
+  background-color: white;
+  border-radius: 8px;
+  border: solid 1px #d0d0d0;
+  padding: 16px;
+  display: grid;
+  place-content: center;
+  min-height: inherit;
+  @media only screen and (min-width: 768px) {
+    padding: 48px 32px;
+    box-shadow: 0 2px 25px 0 rgba(160, 160, 160, 0.5);
+  }
+  form {
+    display: grid;
+    grid: auto / 1fr;
+    row-gap: 16px;
+    @media only screen and (min-width: 768px) {
+      row-gap: 32px
+    }
+  }
+  .title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+  }
+}

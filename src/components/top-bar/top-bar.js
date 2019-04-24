@@ -26,15 +26,15 @@ const TopBar = () => {
         </div>
         <div className="view-desktop">
           <div className="menu">
-            <Button
+            {/* <Button
               style={{
                 backgroundColor: 'white',
                 color: '#333',
                 minWidth: '15ch',
               }}
             >
-              Login
-            </Button>
+              Some Button Action
+            </Button> */}
           </div>
         </div>
         <div className="view-mobile">

@@ -41,12 +41,12 @@ export const fibonacci = (int) => {
 
   // return result.join(', ');
 
-  function fib(n) {
-    if (n < 2){
-      return n
+  const fib = (n) => {
+    if (n < 2) {
+      return n;
     }
-    return fib(n - 1) + fib (n - 2)
-  }
+    return fib(n - 1) + fib(n - 2);
+  };
 
   const result = [];
 

@@ -27,6 +27,7 @@
     "parser": "babel-eslint",
     "globals": {
       "it": true,
+      "expect": true,
       "window": true,
       "document": true
     },
@@ -35,6 +36,9 @@
       "react/no-unescaped-entities": "off"
     }
   },
+  "eslintIgnore": [
+    "src/service-worker/service-worker.js"
+  ],
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -43,6 +47,7 @@
   ],
   "devDependencies": {
     "eslint-config-friza": "^1.1.0",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "react-test-renderer": "^16.8.6"
   }
 }

@@ -1,4 +1,4 @@
-.submit-job-form {
+.main-form {
   background-color: white;
   border-radius: 8px;
   border: solid 1px #d0d0d0;
@@ -23,5 +23,8 @@
     font-weight: bold;
     color: #333;
     margin-top: 0;
+  }
+  .result {
+    font-weight: bold;
   }
 }

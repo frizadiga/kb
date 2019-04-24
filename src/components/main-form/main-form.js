@@ -1,32 +1,56 @@
-import React from 'react';
-import './submit-survey-form.scss';
-
+import React, { useState } from 'react';
+import './main-form.scss';
+import * as fn from './formula';
 import Button from '../button';
 
 const data = {
-  locations: [
+  options: [
     {
-      id: 0,
-      name: 'Lokasi tempat tinggal',
-    }, {
       id: 1,
-      name: 'DKI Jakarta',
+      name: 'Sum',
+      fn: fn.sum,
+    }, {
+      id: 2,
+      name: 'Multiply',
+      fn: fn.multiply,
+    }, {
+      id: 3,
+      name: 'Prime',
+      fn: fn.primes,
+    }, {
+      id: 4,
+      name: 'Fibonacci',
+      fn: fn.fibonacci,
     },
   ],
 };
 
-const SubmitSurveyForm = () => {
-  const handleChange = (e) => {
-    window.alert(e.target.value);
+const MainForm = () => {
+  const [result, setResult] = useState(0);
+  const [inputValue, setInputValue] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(1);
+
+  const handleSelectedOption = (e) => {
+    setSelectedOption(parseInt(e.target.value, 10));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const result = data.options[selectedOption - 1].fn(inputValue);
+    setResult(result);
+  };
+
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
   };
 
   return (
-    <div className="submit-job-form">
-      <p className="title">Jadwalkan survey untuk pengecekan ukuran.</p>
-      <form>
-        <select onChange={handleChange}>
+    <div className="main-form">
+      {/* <p className="title"></p> */}
+      <form onSubmit={handleSubmit}>
+        <select onChange={handleSelectedOption}>
           {
-            data.locations.map(item => (
+            data.options.map(item => (
               <option
                 key={item.id}
                 value={item.id}
@@ -36,28 +60,27 @@ const SubmitSurveyForm = () => {
             ))
           }
         </select>
-        <input type="text" placeholder="Alamat tinggal" />
-        <select onChange={handleChange}>
-          <option value="no-data">Waktu perjanjian survey</option>
-        </select>
-        <input type="text" placeholder="Masukan nama anda" />
-        <input type="text" placeholder="No kontak" />
+        <input type="text" placeholder="Input" onChange={handleInput} />
+        <p className="result">
+          <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
+          {result}
+        </p>
         <Button
           type="submit"
-          to="/thank-you"
+          // to=""
           style={{
-            padding: 25,
+            padding: 12,
             backgroundColor: '#f5a623',
             color: 'white',
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: 'bold',
           }}
         >
-          Konfirmasi Pemesanan
+          Calculate
         </Button>
       </form>
     </div>
   );
 };
 
-export default SubmitSurveyForm;
+export default MainForm;

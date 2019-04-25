@@ -8,18 +8,22 @@ const data = {
     {
       id: 1,
       name: 'Sum',
+      info: 'type 1,3 meaning 1 sum by 3',
       fn: fn.sum,
     }, {
       id: 2,
       name: 'Multiply',
+      info: 'type 1,3 meaning 1 multiply by 3',
       fn: fn.multiply,
     }, {
       id: 3,
       name: 'Prime',
+      info: 'type first N prime number',
       fn: fn.primes,
     }, {
       id: 4,
       name: 'Fibonacci',
+      info: 'type first N fibonacci number',
       fn: fn.fibonacci,
     },
   ],
@@ -32,6 +36,7 @@ const MainForm = () => {
 
   const handleSelectedOption = (e) => {
     setSelectedOption(parseInt(e.target.value, 10));
+    setInputValue('');
   };
 
   const handleSubmit = (e) => {
@@ -60,7 +65,11 @@ const MainForm = () => {
             ))
           }
         </select>
-        <input type="text" placeholder="Input" onChange={handleInput} />
+        <input
+          type={(selectedOption <= 2) ? 'text' : 'number'}
+          placeholder={data.options.find(item => (item.id === selectedOption)).info}
+          onChange={handleInput}
+        />
         <div className="result">
           <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
           {result}
@@ -69,7 +78,7 @@ const MainForm = () => {
           type="submit"
           // to=""
           style={{
-            padding: 12,
+            padding: 16,
             backgroundColor: '#f5a623',
             color: 'white',
             fontSize: 16,

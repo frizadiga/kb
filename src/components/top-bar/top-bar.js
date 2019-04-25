@@ -21,7 +21,7 @@ const TopBar = () => {
       <div className="inner">
         <div className="logo-container">
           <Button to="/">
-            Kitabisa
+            <img src="/images/logo__ktbs__blue.svg" alt="kitabisa"/>
           </Button>
         </div>
         <div className="view-desktop">

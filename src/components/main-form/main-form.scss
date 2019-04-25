@@ -5,7 +5,7 @@
   padding: 16px;
   display: grid;
   place-content: center;
-  min-height: inherit;
+  margin-top: -70px;
   @media only screen and (min-width: 768px) {
     padding: 48px 32px;
     box-shadow: 0 2px 25px 0 rgba(160, 160, 160, 0.5);

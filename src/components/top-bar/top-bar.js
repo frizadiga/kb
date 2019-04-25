@@ -21,7 +21,7 @@ const TopBar = () => {
       <div className="inner">
         <div className="logo-container">
           <Button to="/">
-            Logo
+            Kitabisa
           </Button>
         </div>
         <div className="view-desktop">
@@ -37,11 +37,11 @@ const TopBar = () => {
             </Button> */}
           </div>
         </div>
-        <div className="view-mobile">
+        {/* <div className="view-mobile">
           <Button>
             <FAS icon="bars" />
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

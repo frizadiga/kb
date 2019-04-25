@@ -31,7 +31,7 @@ const data = {
 
 const MainForm = () => {
   const [result, setResult] = useState(0);
-  const [inputValue, setInputValue] = useState(0);
+  const [inputValue, setInputValue] = useState('');
   const [selectedOption, setSelectedOption] = useState(1);
 
   const handleSelectedOption = (e) => {
@@ -69,6 +69,8 @@ const MainForm = () => {
           type={(selectedOption <= 2) ? 'text' : 'number'}
           placeholder={data.options.find(item => (item.id === selectedOption)).info}
           onChange={handleInput}
+          value={inputValue}
+          required
         />
         <div className="result">
           <p style={{ margin: 0, fontWeight: 700 }}>Result: </p>
